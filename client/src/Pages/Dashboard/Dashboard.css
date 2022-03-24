@@ -1,0 +1,43 @@
+.dashboard {
+  width: 100vw;
+  padding: 20px;
+}
+.dashboard-user {
+  color: rebeccapurple;
+}
+.dashboard-wrapper {
+  display: flex;
+  padding: 0px 20px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-right: 10px;
+  flex: 5;
+}
+
+.create-todo {
+  border-radius: 10px;
+  padding: 20px;
+  flex: 3;
+  border-radius: 10px;
+  border: 1px solid rebeccapurple;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.create-todo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 636px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+}

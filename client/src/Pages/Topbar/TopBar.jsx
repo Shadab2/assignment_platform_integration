@@ -6,7 +6,6 @@ function TopBar() {
   return (
     <div className="topbar">
       <Logo />
-      <div className="right">Right</div>
     </div>
   );
 }
