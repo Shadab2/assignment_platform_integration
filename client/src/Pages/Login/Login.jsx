@@ -2,9 +2,10 @@ import React, { useContext, useRef } from "react";
 import "./login.css";
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
-import { IoLogoXing } from "react-icons/io";
 import axios from "axios";
 import { AuthContext } from "../../Context/AuthContext";
+import Logo from "../../Components/Logo/Logo";
+import { Link } from "react-router-dom";
 
 function Login() {
   const password = useRef();
@@ -19,6 +20,7 @@ function Login() {
     };
     try {
       const res = await axios.post("/auth/login", data);
+      localStorage.setItem("user", JSON.stringify(res.data));
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
     } catch (e) {
       dispatch({ type: "LOGIN_FAIL", payload: e.message });
@@ -28,10 +30,7 @@ function Login() {
     <div className="login">
       <div className="login-wrapper">
         <div className="form-wrapper">
-          <div className="logo">
-            <IoLogoXing color="0536ff" size={20} />
-            <span className="logo-text">ToDo's</span>
-          </div>
+          <Logo />
           <form onSubmit={handleSubmit} className="login-form">
             <h2 className="login-title">Welcome Back</h2>
             <span className="login-info-message">
@@ -65,6 +64,18 @@ function Login() {
             <span>forgot password?</span>
             <span className="reset">Reset your password</span>
           </div>
+          <Link
+            to="/register"
+            style={{
+              marginTop: "10px",
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "16px",
+              textDecoration: "none",
+            }}
+          >
+            Don't have an Account?
+          </Link>
         </div>
       </div>
     </div>
