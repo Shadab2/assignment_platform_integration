@@ -3,11 +3,15 @@ import "./Task.css";
 import { FiCheckCircle } from "react-icons/fi";
 import { BsPencilSquare } from "react-icons/bs";
 
-function Task({ active, desc, title }) {
+function Task({ id, active, desc, title, updateTodo }) {
   return (
     <div className={`todo ${active ? "active" : "non-active"}`}>
       {active ? (
-        <BsPencilSquare color="purple" fontSize={30} />
+        <BsPencilSquare
+          color="purple"
+          fontSize={30}
+          onClick={() => updateTodo(id, active)}
+        />
       ) : (
         <FiCheckCircle color="green" fontSize={30} />
       )}

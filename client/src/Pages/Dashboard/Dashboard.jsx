@@ -22,7 +22,7 @@ function Dashboard() {
       }
     };
     fetchTodos();
-  }, [user]);
+  }, [user, todos]);
 
   const handleSubmit = async () => {
     const data = {
@@ -37,6 +37,16 @@ function Dashboard() {
       console.log(e);
     }
   };
+
+  const updateTodo = async (id, active) => {
+    try {
+      await axios.put("/todo/" + id, { userId: user._id, active: !active });
+      alert("Updated Successfully");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <TopBar />
@@ -56,6 +66,8 @@ function Dashboard() {
                   desc={todo.desc}
                   active={todo.active}
                   key={todo._id}
+                  updateTodo={updateTodo}
+                  id={todo._id}
                 />
               );
             })}

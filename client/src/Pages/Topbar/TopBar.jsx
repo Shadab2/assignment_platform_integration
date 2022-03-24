@@ -8,7 +8,7 @@ function TopBar() {
     <div className="topbar">
       <Link to="/" className="logo">
         <IoLogoXing color="white" size={20} />
-        <span className="logo-text">ToDo's</span>
+        <span className="logo-text-i">ToDo's</span>
       </Link>
       <Link
         style={{ textDecoration: "none", color: "white", fontSize: "20px" }}
