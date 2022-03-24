@@ -8,12 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 .logo-text {
   font-size: 20px;
   font-weight: 700;
   margin-left: 5px;
-  color: rgb(84, 13, 150);
+  color: #0635f1;
 }
 .login-wrapper {
   padding: 40px;
@@ -81,6 +82,7 @@
   margin: 10px 0px;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 .submit-button:hover {
   background-color: #0a33d8;

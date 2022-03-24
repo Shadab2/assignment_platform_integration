@@ -3,8 +3,10 @@ import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { IoLogoXing } from "react-icons/io";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
   const password = useRef();
   const email = useRef();
   const confirmpassword = useRef();
@@ -23,6 +25,7 @@ function Register() {
     try {
       await axios.post("/auth/register", data);
       alert("Account created successully");
+      navigate("/login");
     } catch (e) {
       console.log(e);
     }

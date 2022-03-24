@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from "./Context/AuthContext";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import ProtectedRoute from "./ProtectedRoute";
+import Profile from "./Pages/Profile/Profile";
 
 function App() {
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProtectedRoute user={user} />}>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
         <Route
           path="/login"

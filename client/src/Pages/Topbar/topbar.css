@@ -1,1 +1,23 @@
+.topbar {
+  display: flex;
+  height: 50px;
+  position: sticky;
+  top: 0px;
+  right: 0px;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #0635f1;
+}
 
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 5px;
+  color: white;
+}
+
+.right {
+  display: flex;
+}

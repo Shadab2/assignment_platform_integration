@@ -1,0 +1,21 @@
+.profile-container {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-profile {
+  width: 400px;
+}
+
+.change-cred {
+  display: flex;
+  width: 100%;
+  border: 1px solid rgb(235, 200, 200);
+  border-radius: 10px;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px;
+}
