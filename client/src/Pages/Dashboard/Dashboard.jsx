@@ -22,7 +22,7 @@ function Dashboard() {
       }
     };
     fetchTodos();
-  }, [user, todos]);
+  }, [user]);
 
   const handleSubmit = async () => {
     const data = {
